@@ -17,12 +17,14 @@
   },
   "permissions": [
     "tabs",
+    "activeTab",
     "http://*/*",
     "https://*/*",
     "background",
     "management",
     "notifications",
-    "storage"
+    "storage",
+    "webRequest"
   ],
   "options_ui": {
     "page": "options.html",
@@ -32,25 +34,24 @@
     {
       "matches": [
         "http://*/*",
-        "https://*/*"
+        "https://*/*",
+        "https://my.babbel.com/*",
+        "http://my.babbel.com/*"
       ],
       "js": [
         "scripts/contentscript.js"
       ],
-      "run_at": "document_end",
+      "run_at": "document_start",
       "all_frames": false
     }
   ],
   "omnibox": {
     "keyword": "OMNIBOX-KEYWORD"
   },
-  "page_action": {
-    "default_icon": {
-      "19": "images/icon-19.png",
-      "38": "images/icon-38.png"
-    },
-    "default_title": "babbel chrome extension",
-    "default_popup": "popup.html"
+  "browser_action": {
+    "default_icon": "images/icon.png",
+    "default_popup": "popup.html",
+    "default_title": "My custom google Extension"
   },
   "web_accessible_resources": [
     "images/icon-48.png"
