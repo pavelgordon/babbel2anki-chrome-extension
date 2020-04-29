@@ -27,9 +27,6 @@ function interceptData() {
             if (this.url.includes('learned_items')) {
                 var data = JSON.parse(this.response);
                 data.url = this.url
-                console.log('-------------------------------')
-                console.log("setting __interceptedData this", this)
-                console.log("setting __interceptedData data", data)
                 var dataDOMElement = document.createElement('div');
                 dataDOMElement.id = '__interceptedData';
                 dataDOMElement.innerText = JSON.stringify(data);
@@ -58,16 +55,18 @@ function checkForDOM() {
 requestIdleCallback(checkForDOM);
 
 async function scrapeData() {
-  var responseContainingEle = document.getElementById('__interceptedData');
+  const responseContainingEle = document.getElementById('__interceptedData');
+  const deckName = 'Babbel-deck-name'
+  const modelName = 'babbelModel'
   if (responseContainingEle) {
     chrome.runtime.sendMessage(
       {
         action: "addNotes",
         learnedItems: JSON.parse(responseContainingEle.innerHTML).learned_items,
-        deckName: 'test',
-        modelName: 'newModelName2'
+        deckName: deckName,
+        modelName: modelName
       }, function (response) {
-        console.log("forwardCards response", response);
+        console.log(`Added ${response.addedNotes}/${response.totalNotes} new words to ${deckName} using model ${modelName}`);
         chrome.runtime.sendMessage('', {
           type: 'notification',
           options: {
