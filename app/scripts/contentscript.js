@@ -1,6 +1,5 @@
 'use strict';
 
-
 function interceptData() {
   var xhrOverrideScript = document.createElement('script');
   xhrOverrideScript.type = 'text/javascript';

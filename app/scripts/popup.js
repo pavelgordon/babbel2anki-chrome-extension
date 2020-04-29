@@ -1,7 +1,5 @@
 'use strict';
 
-console.log('\'Allo \'Allo! Popup');
-
 document.addEventListener('DOMContentLoaded', initiateStorageAndUI, false);
 
 
