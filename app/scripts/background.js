@@ -44,23 +44,19 @@ chrome.runtime.onMessage.addListener(
         })
       );
       console.log(`deck ${deckName}, model ${modelName}, notes:`, notes)
-      createDeck(deckName).then(deckResult => {
-          console.log(`deck ${deckName} created or existed, calling addModel`, deckResult)
-          createModel(modelName).then(model => {
-            console.log("model created or existed, calling addNotes", model)
-            addNotes(notes)
-              .then(response => (
-                {
-                  notesIds: response.result,
-                  addedNotes: response.result.filter(e => e != null).length,
-                  totalNotes: response.result.length,
-                  error: response.error
-                })
-              )
-              .then(result => sendResponse(result))
+      createDeck(deckName)
+        .then(() => createModel(modelName))
+        .then(() => addNotes(notes))
+        .then(response => (
+          {
+            notesIds: response.result,
+            addedNotes: response.result.filter(e => e != null).length,
+            totalNotes: response.result.length,
+            error: response.error
           })
-        }
-      )
+        )
+        .then(result => sendNotification(result))
+        .then(result => sendResponse(result))
     }
     return true
   })
@@ -68,12 +64,14 @@ chrome.runtime.onMessage.addListener(
 
 
 function createDeck(deckName) {
+  console.log(`createDeck ${deckName}`)
   return callAnkiConnect("createDeck", {
     deck: deckName
   })
 }
 
 function createModel(modelName) {
+  console.log(`addModel ${modelName}`)
   return callAnkiConnect("createModel", {
     modelName: modelName,
     inOrderFields: ["Word", "Picture", "Extra Info", "Pronunciation"],
@@ -135,6 +133,7 @@ function createModel(modelName) {
 
 
 function addNotes(notes) {
+  console.log("addNotes", notes.length)
   return callAnkiConnect("addNotes", {notes: notes})
 }
 
@@ -146,4 +145,16 @@ async function callAnkiConnect(action, params = {}, version = 6,) {
     })
 
   return response.json()
+}
+
+function sendNotification(result) {
+  const options = {
+    title: `Added ${result.addedNotes} new words`,
+    message: `\nTotal words: ${result.totalNotes}`,
+    iconUrl: 'images/icon.png',
+    type: 'basic'
+
+  }
+  chrome.notifications.create('',options );
+  return result
 }

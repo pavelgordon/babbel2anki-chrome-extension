@@ -67,15 +67,6 @@ async function scrapeData() {
         modelName: modelName
       }, function (response) {
         console.log(`Added ${response.addedNotes}/${response.totalNotes} new words to ${deckName} using model ${modelName}`);
-        chrome.runtime.sendMessage('', {
-          type: 'notification',
-          options: {
-            title: `Added ${response.addedNotes} new words`,
-            message: `\nTotal words: ${response.totalNotes}`,
-            iconUrl: 'images/icon.png',
-            type: 'basic'
-          }
-        });
       });
 
 
