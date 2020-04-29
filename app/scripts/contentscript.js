@@ -1,15 +1,6 @@
 'use strict';
 
 
-// const button = document.createElement('button');
-// button.textContent = 'Greet me!'
-// document.body.insertAdjacentElement('afterbegin', button);
-// button.addEventListener('click', () => {
-//   console.log('notification')
-//
-// });
-
-
 function interceptData() {
   var xhrOverrideScript = document.createElement('script');
   xhrOverrideScript.type = 'text/javascript';
@@ -55,22 +46,24 @@ function checkForDOM() {
 requestIdleCallback(checkForDOM);
 
 async function scrapeData() {
-  const responseContainingEle = document.getElementById('__interceptedData');
-  const deckName = 'Babbel-deck-name'
-  const modelName = 'babbelModel'
-  if (responseContainingEle) {
-    chrome.runtime.sendMessage(
-      {
-        action: "addNotes",
-        learnedItems: JSON.parse(responseContainingEle.innerHTML).learned_items,
-        deckName: deckName,
-        modelName: modelName
-      }, function (response) {
-        console.log(`Added ${response.addedNotes}/${response.totalNotes} new words to ${deckName} using model ${modelName}`);
-      });
+  const learningItemsEle = document.getElementById('__interceptedData');
 
+  if (learningItemsEle) {
+    chrome.storage.sync.get(['deckName', 'modelName'], function (holder) {
+      const deckName = holder.deckName
+      const modelName = holder.modelName
+      chrome.runtime.sendMessage(
+        {
+          action: "addNotes",
+          learnedItems: JSON.parse(learningItemsEle.innerHTML).learned_items,
+          deckName: deckName,
+          modelName: modelName
+        }, function (response) {
+          console.log(`Added ${response.addedNotes}/${response.totalNotes} new words to ${deckName} using model ${modelName}`);
+        });
+    })
 
-    responseContainingEle.remove()
+    learningItemsEle.remove()
   }
   requestIdleCallback(scrapeData);
 
