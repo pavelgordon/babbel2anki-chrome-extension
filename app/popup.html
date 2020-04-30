@@ -6,34 +6,58 @@
   <link href="styles/primer.css" rel="stylesheet">
 </head>
 <body>
-<form style="padding: 16px ; width: 300px">
-  <h3 class="h2">Anki Settings</h3>
-  <div class="form-group">
-    <div class="form-group-header">
-      <label for="deckName_textbox">Deck name</label>
-    </div>
-    <div class="form-group-body">
-      <input class="form-control" type="text" value="BabbelDeck" id="deckName_textbox" />
-    </div>
-  </div>
 
-  <div class="form-group">
-    <div class="form-group-header">
-      <label for="modelName_textbox">Model name</label>
-    </div>
-    <div class="form-group-body">
-      <input class="form-control" type="text" value="BabbelModel" id="modelName_textbox" />
-    </div>
+<!--style="width: 300px"-->
+<div class="Box">
+  <div class="Box-header">
+    <h3 class="Box-title">
+      Babbel2Anki Settings
+    </h3>
   </div>
-  <button id="ok_btn" class="btn btn-primary" type="button">Save changes</button>
-</form>
-<!--<div style="padding: 20px 20px 20px 20px;">-->
-<!--  <h3>Hello,</h3>-->
-<!--  <p>Please enter deck and model names : </p>-->
-<!--  <input id="deckName_textbox" />-->
-<!--  <input id="modelName_textbox" />-->
-<!--  <button id="ok_btn" type="button">OK</button>-->
-<!--</div>-->
+  <form>
+    <div class="Box-body">
+
+      <div class="form-group">
+        <div class="form-group-header"><label>Deck name</label></div>
+        <div class="form-group-body"><input class="form-control" type="text" placeholder="Anki deck name"
+                                            value="BabbelDeck" id="deckName_textbox"/>
+        </div>
+        <p class="note" id="help-text-for-deck-name">
+          Custom name for deck where cards are be added. Will be created if not exists.
+        </p>
+      </div>
+
+      <div class="form-group">
+        <div class="form-group-header"><label>Model name</label></div>
+        <div class="form-group-body"><input class="form-control" type="text" placeholder="Anki model name"
+          value="BabbelModel" id="modelName_textbox" />
+        </div>
+        <p class="note" id="help-text-for-model-name">
+          Custom name for card template with fields. Will be created if not exists.
+        </p>
+      </div>
+
+
+      <div class="form-checkbox">
+        <label>
+          <input type="checkbox" checked="checked" id="auto-sync-mode"/>
+          Auto-sync to Anki
+        </label>
+        <p class="note" id="help-text-for-checkbox">
+          Automatically import new words to selected deck after opening Babbel Review(with interval of 30 seconds)
+        </p>
+      </div>
+    </div>
+    <div class="Box-footer text-right">
+      <button class="btn btn-secondary mr-1">
+        Cancel
+      </button>
+      <button class="btn btn-primary" id="ok_btn">
+        Save
+      </button>
+    </div>
+  </form>
+</div>
 
 </body>
 </html>
