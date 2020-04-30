@@ -1,10 +1,10 @@
 {
   "appName": {
-    "message": "babbel chrome extension",
+    "message": "Babbel2Anki",
     "description": "The name of the application"
   },
   "appDescription": {
-    "message": "My Chrome Extension",
+    "message": "Exports and syncs Babbel Review dictionary to Anki Deck. Required Anki Connect plugin. Creates deck 'BabbelDeck' and model 'BabbelModel'",
     "description": "The description of the application"
   }
 }
