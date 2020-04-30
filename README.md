@@ -5,8 +5,7 @@
 Babbel2Anki
 </h1>
 <p align="center">
-Chrome Extension which imports and syncs Babbel vocabulary to [Anki](https://apps.ankiweb.net/). 
-Supports auto-syncing, customising deck and card template for syncing.
+Babbel2Anki is a chrome extension which imports and syncs Babbel vocabulary to Anki. Supports auto-syncing, customising deck and card template for syncing.
 </p>
 
 ## What is it  
@@ -16,6 +15,12 @@ Supports auto-syncing, customising deck and card template for syncing.
 [`AnkiConnect`](https://foosoft.net/projects/anki-connect/) - addon for Anki Desktop.  
 `Babbel2Anki` - unofficial chrome extension for exporting and syncing vocabulary from `Babbel` to `Anki` made by me.
 ## How to use
+### TL;DR:
+1. Install this extension
+1. Open `Anki Desktop` with `AnkiConnect` addon.
+1. Open [`Review section of Babbel`](https://my.babbel.com/review-manager?ref=navbar) with any language of your choice.
+1. Check your `Anki Desktop` for new deck `BabbelDeck` with all your words from Babbel.
+### More detailed guide
 Assuming that `Anki Desktop` with `AnkiConnect` addon opened in background: 
 1. Go to: `chrome://extensions`, enable Developer mode and load `app` as an unpacked extension.
 1. Optional: Set custom deck name and enable/disable auto-sync mode by clicking on extension, there is a popup with settings.
