@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://imgur.com/a/HWpYKBQ" width="250" alt="babbel-to-anki">
+<img src="https://i.imgur.com/RXOYJCu.png" width="250" alt="babbel-to-anki">
 </p>
 <h1 align="center">
 Babbel2Anki
