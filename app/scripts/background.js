@@ -1,8 +1,5 @@
 'use strict';
 
-chrome.runtime.onInstalled.addListener(details => {
-  console.log('previousVersion', details.previousVersion);
-});
 
 
 chrome.runtime.onMessage.addListener(
@@ -15,9 +12,9 @@ chrome.runtime.onMessage.addListener(
           deckName: deckName,
           modelName: modelName,
           fields: {
-            Word: item.learn_language_text,
+            Word: item.learnLanguageText,
             Picture: `<img src='https://images.babbel.com/v1.0.0/images/${item.image.id}/variations/square/resolutions/500x500.png'/>`,
-            "Extra Info": item.display_language_text
+            "Extra Info": item.displayLanguageText
           },
           options: {
             "allowDuplicate": false,
@@ -57,14 +54,14 @@ chrome.runtime.onMessage.addListener(
 
 
 function createDeck(deckName) {
-  console.log(`createDeck ${deckName}`)
+  // console.log(`createDeck ${deckName}`)
   return callAnkiConnect("createDeck", {
     deck: deckName
   })
 }
 
 function createModel(modelName) {
-  console.log(`addModel ${modelName}`)
+  // console.log(`addModel ${modelName}`)
   return callAnkiConnect("createModel", {
     modelName: modelName,
     inOrderFields: ["Word", "Picture", "Extra Info", "Pronunciation"],
@@ -126,7 +123,7 @@ function createModel(modelName) {
 
 
 function addNotes(notes) {
-  console.log("addNotes", notes.length)
+  // console.log("addNotes", notes.length)
   return callAnkiConnect("addNotes", {notes: notes})
 }
 

@@ -1,46 +1,39 @@
-<!--<!doctype html>-->
-<!--<html>-->
-<!--  <head>-->
-<!--    <meta charset="utf-8">-->
-<!--    &lt;!&ndash; build:css styles/popup-vendor.css &ndash;&gt;-->
-<!--    &lt;!&ndash; bower:css &ndash;&gt;-->
-<!--    &lt;!&ndash; endbower &ndash;&gt;-->
-<!--    &lt;!&ndash; endbuild &ndash;&gt;-->
-<!--    &lt;!&ndash; build:css styles/main.css &ndash;&gt;-->
-<!--    <link href="styles/main.css" rel="stylesheet">-->
-<!--    &lt;!&ndash; endbuild &ndash;&gt;-->
-<!--  </head>-->
-<!--  <body>-->
-<!--    <h1>Click to fetch the data from reviews http requests</h1>-->
-<!--    <button id="clickIt">Click</button>-->
-<!--    &lt;!&ndash; build:js scripts/popup-vendor.js &ndash;&gt;-->
-<!--    &lt;!&ndash; bower:js &ndash;&gt;-->
-<!--    &lt;!&ndash; endbower &ndash;&gt;-->
-<!--    &lt;!&ndash; endbuild &ndash;&gt;-->
-
-<!--    &lt;!&ndash; build:js scripts/popup.js &ndash;&gt;-->
-<!--    <script src="scripts/popup.js"></script>-->
-<!--    &lt;!&ndash; endbuild &ndash;&gt;-->
-<!--  </body>-->
-<!--</html>-->
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
   <title>Wonderful Extension</title>
   <script src="scripts/popup.js"></script>
+  <link href="styles/primer.css" rel="stylesheet">
 </head>
 <body>
+<form style="padding: 16px ; width: 300px">
+  <h3 class="h2">Anki Settings</h3>
+  <div class="form-group">
+    <div class="form-group-header">
+      <label for="deckName_textbox">Deck name</label>
+    </div>
+    <div class="form-group-body">
+      <input class="form-control" type="text" value="BabbelDeck" id="deckName_textbox" />
+    </div>
+  </div>
 
-<div style="padding: 20px 20px 20px 20px;">
-  <h3>Hello,</h3>
-  <p>Please enter deck and model names : </p>
-  <input id="deckName_textbox" />
-  <input id="modelName_textbox" />
-  <button id="ok_btn" type="button">OK</button>
-</div>
+  <div class="form-group">
+    <div class="form-group-header">
+      <label for="modelName_textbox">Model name</label>
+    </div>
+    <div class="form-group-body">
+      <input class="form-control" type="text" value="BabbelModel" id="modelName_textbox" />
+    </div>
+  </div>
+  <button id="ok_btn" class="btn btn-primary" type="button">Save changes</button>
+</form>
+<!--<div style="padding: 20px 20px 20px 20px;">-->
+<!--  <h3>Hello,</h3>-->
+<!--  <p>Please enter deck and model names : </p>-->
+<!--  <input id="deckName_textbox" />-->
+<!--  <input id="modelName_textbox" />-->
+<!--  <button id="ok_btn" type="button">OK</button>-->
+<!--</div>-->
 
 </body>
 </html>
