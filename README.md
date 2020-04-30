@@ -1,5 +1,14 @@
-## Babbel2Anki Chrome Extension
-Chrome Extension which imports and syncs Babbel vocabulary to [Anki](https://apps.ankiweb.net/). Supports auto-syncing, customising deck and card template for syncing.
+<p align="center">
+<img src="https://imgur.com/a/HWpYKBQ" width="250" alt="babbel-to-anki">
+</p>
+<h1 align="center">
+Babbel2Anki
+</h1>
+<p align="center">
+Chrome Extension which imports and syncs Babbel vocabulary to [Anki](https://apps.ankiweb.net/). 
+Supports auto-syncing, customising deck and card template for syncing.
+</p>
+
 ## What is it  
 [`Babbel`](https://my.babbel.com) - a German subscription-based language learning app and e-learning platform with more than 14 languages being offered at the moment.  
 [`Anki`](https://apps.ankiweb.net/) - Anki is a free and open-source flashcard program that utilizes spaced repetition. Spaced repetition has been shown to increase rate of memorization.  
