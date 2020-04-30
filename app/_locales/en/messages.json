@@ -4,7 +4,7 @@
     "description": "The name of the application"
   },
   "appDescription": {
-    "message": "Exports and syncs Babbel Review dictionary to Anki Deck. Required Anki Connect plugin. Creates deck 'BabbelDeck' and model 'BabbelModel'",
+    "message": "Exports and syncs Babbel Review dictionary to Anki Deck. Required Anki Connect plugin.",
     "description": "The description of the application"
   }
 }
