@@ -15,12 +15,10 @@
     ]
   },
   "permissions": [
-    "tabs",
     "activeTab",
-    "http://*/*",
-    "https://*/*",
+    "http://my.babbel.com/*",
+    "https://my.babbel.com/*",
     "background",
-    "management",
     "notifications",
     "storage",
     "webRequest"
