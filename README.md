@@ -13,7 +13,6 @@ Chrome Extension which imports and syncs Babbel vocabulary to Anki. Supports aut
 [`Anki`](https://apps.ankiweb.net/) - Anki is a free and open-source flashcard program that utilizes spaced repetition. Spaced repetition has been shown to increase rate of memorization.  
 [`Anki Desktop`](https://apps.ankiweb.net/) - computer version of Anki.  
 [`AnkiConnect`](https://foosoft.net/projects/anki-connect/) - addon for Anki Desktop.  
-`Babbel2Anki` - unofficial chrome extension for exporting and syncing vocabulary from `Babbel` to `Anki` made by me.
 ## How to use
 ### TL;DR:
 1. Install this extension([latest release](https://github.com/pavelgordon/babbel2anki-chrome-extension/releases/tag/v0.0.1))
