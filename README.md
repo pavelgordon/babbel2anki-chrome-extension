@@ -16,7 +16,7 @@ Chrome Extension which imports and syncs Babbel vocabulary to Anki. Supports aut
 `Babbel2Anki` - unofficial chrome extension for exporting and syncing vocabulary from `Babbel` to `Anki` made by me.
 ## How to use
 ### TL;DR:
-1. Install this extension
+1. Install this extension([latest release](https://github.com/pavelgordon/babbel2anki-chrome-extension/releases/tag/v0.0.1))
 1. Open `Anki Desktop` with [`AnkiConnect`](https://foosoft.net/projects/anki-connect/) addon.
 1. Open [`Review section of Babbel`](https://my.babbel.com/review-manager?ref=navbar) with any language of your choice.
 1. Check your `Anki Desktop` for new deck `BabbelDeck` with all your words from Babbel.
