@@ -17,10 +17,17 @@ Chrome Extension which imports and syncs Babbel vocabulary to Anki. Supports aut
 ### TL;DR:
 1. Install this extension([latest release](https://github.com/pavelgordon/babbel2anki-chrome-extension/releases/tag/v0.0.1))
 1. Open `Anki Desktop` with [`AnkiConnect`](https://foosoft.net/projects/anki-connect/) addon.
+1. Update AnkiConnect CORS policy(reasoning explained below):  Anki Desktop -> Tools -> Addons -> AnkiConnect -> Config->
+```"webCorsOriginList": ["*"]```
 1. Open [`Review section of Babbel`](https://my.babbel.com/review-manager?ref=navbar) with any language of your choice.
 1. Check your `Anki Desktop` for new deck `BabbelDeck` with all your words from Babbel.
 ### More detailed guide
-Assuming that `Anki Desktop` with `AnkiConnect` addon opened in background: 
+Install [`AnkiConnect`](https://foosoft.net/projects/anki-connect/). Now you have to allow AnkiConnect to receive calls from this extension via setting `webCorsOriginList`(Anki Desktop -> Tools -> Addons -> AnkiConnect -> Config): 
+- `"webCorsOriginList": ["*"]` to allow calls from any resourse
+- `"webCorsOriginList": ["chrome-extension://hdihhgoahdggcdndkepomdlbjhngghig"]` to allow calls only from this extension. Replace `hdihhgoahdggcdndkepomdlbjhngghig` with ID from `chrome://extensions`
+![image](https://user-images.githubusercontent.com/2462444/80809999-2b538980-8bc3-11ea-9dcc-3bb347e75fbb.png)  
+
+Now with `Anki Desktop` with `AnkiConnect` addon being set up: 
 1. Go to: `chrome://extensions`, enable Developer mode and load `app` as an unpacked extension.
 1. Optional: Set custom deck name and enable/disable auto-sync mode by clicking on extension, there is a popup with settings.
 
