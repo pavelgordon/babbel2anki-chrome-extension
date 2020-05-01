@@ -49,6 +49,7 @@ Assuming that `Anki Desktop` with `AnkiConnect` addon opened in background:
 - Better workflow for multiple decks
 - Extend to other learning web-sites(like Duolingo)
 - Custom Sync server
+- Error handling if AnkiConnect is not installed
   
 ## Links
 - [Anki](https://apps.ankiweb.net)
