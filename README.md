@@ -39,7 +39,7 @@ Now with `Anki Desktop` with `AnkiConnect` addon being set up:
 1. `Babbel2Anki` will: 
     -  Create a deck with name `BabbelDeck`(if such deck already exists, nothing happens)
     -  Create a card template (model) with name `BabbelModel` and all necessary fields (if such model already exists, nothing happens)
-    -  Adds all learned `My vocab` words to deck `BabbelDeck`. Adds only new words(which are not in the deck).  
+    -  Adds **all** learned `My vocab` words to deck `BabbelDeck`. Adds only new words(which are not in the deck).  
     -  Shows notification about an amount of **new** words which were saved in Anki (e.g. if notification says that new words/total words is 10/50 - means that other 40 words are duplicates).
 ![image](https://user-images.githubusercontent.com/2462444/80767663-b5124100-8b48-11ea-9d6b-c8beb3f6aa51.png)
 1. Check Anki Desktop for `BabbelDeck`: 
@@ -52,6 +52,7 @@ Now with `Anki Desktop` with `AnkiConnect` addon being set up:
   - ~~use pagination to fetch all words~~
  - ~~Button to manually sync(add to review html page)~~
  - ~~Checkbox to temporary disable auto-sync~~
+- Merging vocabularies(right now extension takes whole vocabulary from Babbel and sends it to Anki)
 - Better workflow for multiple decks
 - Extend to other learning web-sites(like Duolingo)
 - Custom Sync server

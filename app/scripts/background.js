@@ -4,7 +4,7 @@
 
 chrome.runtime.onMessage.addListener(
   (request, sender, sendResponse) => {
-    if (request.action == "addNotes") {
+    if (request.action === "addNotes") {
       const deckName = request.deckName
       const modelName = request.modelName
       const notes = request.learnedItems.map(
