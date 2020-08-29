@@ -48,7 +48,6 @@ async function sendDataToAnki(learnedItems) {
 function getOrInitProperty(property, defaultValue) {
   return new Promise((resolve) => {
       chrome.storage.sync.get([property], result => {
-        console.log(property,result[property] )
         if (result[property] === undefined || result[property] == null) {
           result[property] = defaultValue
           chrome.storage.sync.set({property: defaultValue},
