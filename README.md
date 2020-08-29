@@ -20,6 +20,7 @@ Chrome Extension which imports and syncs Babbel vocabulary to Anki. Supports aut
 1. Update AnkiConnect CORS policy(reasoning explained below):  Anki Desktop -> Tools -> Addons -> AnkiConnect -> Config->
 ```"webCorsOriginList": ["*"]```
 1. Open [`Review section of Babbel`](https://my.babbel.com/review-manager?ref=navbar) with any language of your choice.
+1. Click `Sync current page with Anki` button.
 1. Check your `Anki Desktop` for new deck `BabbelDeck` with all your words from Babbel.
 ### More detailed guide
 Install [`AnkiConnect`](https://foosoft.net/projects/anki-connect/). Now you have to allow AnkiConnect to receive calls from this extension via setting `webCorsOriginList`(Anki Desktop -> Tools -> Addons -> AnkiConnect -> Config): 
@@ -29,18 +30,18 @@ Install [`AnkiConnect`](https://foosoft.net/projects/anki-connect/). Now you hav
 
 Now with `Anki Desktop` with `AnkiConnect` addon being set up: 
 1. Go to: `chrome://extensions`, enable Developer mode and load `app` as an unpacked extension.
-1. Optional: Set custom deck name and enable/disable auto-sync mode by clicking on extension, there is a popup with settings.
+1. Optional: Set custom deck name, there is a popup with settings. Auto-sync mode in work.
 
 ![image](https://user-images.githubusercontent.com/2462444/80767209-ae36fe80-8b47-11ea-8798-53a8541cfbb0.png)
 1. Login to Babbel and open [`Review section of Babbel`](https://my.babbel.com/review-manager?ref=navbar ). It opens a review section of a selected language. 
 - `Sync with Anki` is a new button coming from `Babbel2Anki` which allows to manually sync to configured deck.
-- `auto-sync` enabled option performs sync to configured deck every 30 seconds.
+- ~~`auto-sync` enabled option performs sync to configured deck every 30 seconds.~~ WIP
 ![image](https://user-images.githubusercontent.com/2462444/80767502-564cc780-8b48-11ea-954a-98a3fff83e0d.png)
 1. `Babbel2Anki` will: 
     -  Create a deck with name `BabbelDeck`(if such deck already exists, nothing happens)
     -  Create a card template (model) with name `BabbelModel` and all necessary fields (if such model already exists, nothing happens)
-    -  Adds **all** learned `My vocab` words to deck `BabbelDeck`. Adds only new words(which are not in the deck).  
-    -  Shows notification about an amount of **new** words which were saved in Anki (e.g. if notification says that new words/total words is 10/50 - means that other 40 words are duplicates).
+    -  Adds words from current open page in `My vocab` words to deck `BabbelDeck`. Adds only new words(which are not in the deck).  
+    -  Shows notification about an amount of **new** words which were saved in Anki (e.g. if notification says that new words/total words is 10/50 - means that other 40 words are already in Anki deck).
 ![image](https://user-images.githubusercontent.com/2462444/80767663-b5124100-8b48-11ea-9d6b-c8beb3f6aa51.png)
 1. Check Anki Desktop for `BabbelDeck`: 
 ![image](https://user-images.githubusercontent.com/2462444/80614070-4e086580-8a3e-11ea-8b5c-cf847e1e29eb.png)
@@ -52,7 +53,8 @@ Now with `Anki Desktop` with `AnkiConnect` addon being set up:
   - ~~use pagination to fetch all words~~
  - ~~Button to manually sync(add to review html page)~~
  - ~~Checkbox to temporary disable auto-sync~~
-- Merging vocabularies(right now extension takes whole vocabulary from Babbel and sends it to Anki)
+- Rethink AutoSync mechanism
+- Merging vocabularies(right now extension takes  vocabulary from Babbel and sends it to Anki, even it was added before)
 - Better workflow for multiple decks
 - Extend to other learning web-sites(like Duolingo)
 - Custom Sync server
@@ -66,3 +68,6 @@ Now with `Anki Desktop` with `AnkiConnect` addon being set up:
 - [generator-chrome-extension](https://github.com/yeoman/generator-chrome-extension)
 - [Intercepting body requests in chrome extension](https://medium.com/better-programming/chrome-extension-intercepting-and-reading-the-body-of-http-requests-dd9ebdf2348b)
 - [Icons used from](https://www.flaticon.com/)
+
+
+

@@ -10,12 +10,9 @@ document.addEventListener('DOMContentLoaded', initiateStorageAndUI, false);
 async function initiateStorageAndUI() {
   const deckName = await getOrInitProperty('deckName', 'BabbelDeck')
   const modelName = await getOrInitProperty('modelName', 'BabbelModel')
-  const autoSyncMode = await getOrInitProperty('autoSyncMode', 'true')
-  console.log('Deck, Model Names and autoSyncMode are', deckName, modelName, autoSyncMode);
-  refreshPopup({deckName: deckName, modelName: modelName, autoSyncMode: autoSyncMode})
+  refreshPopup({deckName: deckName, modelName: modelName})
 
-  document.getElementById('ok_btn')
-    .addEventListener('click', () => updateValues());
+  document.getElementById('ok_btn').addEventListener('click', () => updateValues());
 }
 
 function getOrInitProperty(property, defaultValue) {
@@ -37,15 +34,12 @@ function updateValues() {
 
   const deckName = document.getElementById('deckName_textbox').value
   const modelName = document.getElementById('modelName_textbox').value
-  const autoSyncMode = document.getElementById('auto-sync-mode').checked
-  console.log("updateValues", autoSyncMode)
 
   chrome.storage.sync.set({
     deckName: deckName,
     modelName: modelName,
-    autoSyncMode: autoSyncMode
   }, function () {
-    console.log(`updated values: deckName: ${deckName}, modelName: ${modelName}, autoSyncMode: ${autoSyncMode}` );
+    console.log(`updated values: deckName: ${deckName}, modelName: ${modelName}` );
   });
 }
 
@@ -54,6 +48,5 @@ function refreshPopup(holder) {
   console.log('refreshPopup', holder)
   document.getElementById('deckName_textbox').value = holder.deckName
   document.getElementById('modelName_textbox').value = holder.modelName
-  document.getElementById('auto-sync-mode').checked = holder.autoSyncMode
 }
 

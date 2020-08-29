@@ -33,7 +33,7 @@ chrome.runtime.onMessage.addListener(
 
         })
       );
-      console.log(`deck ${deckName}, model ${modelName}, notes:`, notes)
+      // console.log(`deck ${deckName}, model ${modelName}, notes:`, notes)
       createDeck(deckName)
         .then(() => createModel(modelName))
         .then(() => addNotes(notes))
