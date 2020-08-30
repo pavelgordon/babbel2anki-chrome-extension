@@ -7,22 +7,23 @@ chrome.runtime.onMessage.addListener(
     if (request.action === "addNotes") {
       const deckName = request.deckName
       const modelName = request.modelName
+      const tagString = request.tagString
       const notes = request.learnedItems.map(
         item => ({
           deckName: deckName,
           modelName: modelName,
           fields: {
             Word: item.learnLanguageText,
-            Picture: `<img src='https://images.babbel.com/v1.0.0/images/${item.image.id}/variations/square/resolutions/500x500.png'/>`,
+            Picture: item.image && item.image.id
+            ? `<img src='https://images.babbel.com/v1.0.0/images/${item.image.id}/variations/square/resolutions/500x500.png'/>`
+            : '',
             "Extra Info": item.displayLanguageText
           },
           options: {
-            "allowDuplicate": false,
+            "allowDuplicate": true,
             "duplicateScope": "deck"
           },
-          tags: [
-            "yomichan"
-          ],
+          tags: tagString.split(',').map(s => s.trim()),
           audio: [{
             url: `https://sounds.babbel.com/v1.0.0/sounds/${item.sound.id}/normal.mp3`,
             filename: item.sound.id,

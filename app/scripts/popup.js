@@ -10,7 +10,13 @@ document.addEventListener('DOMContentLoaded', initiateStorageAndUI, false);
 async function initiateStorageAndUI() {
   const deckName = await getOrInitProperty('deckName', 'BabbelDeck')
   const modelName = await getOrInitProperty('modelName', 'BabbelModel')
-  refreshPopup({deckName: deckName, modelName: modelName})
+  const tagString = await getOrInitProperty('tagString', '')
+
+  refreshPopup({
+    deckName: deckName,
+    modelName: modelName,
+    tagString: tagString
+  })
 
   document.getElementById('ok_btn').addEventListener('click', () => updateValues());
 }
@@ -34,12 +40,14 @@ function updateValues() {
 
   const deckName = document.getElementById('deckName_textbox').value
   const modelName = document.getElementById('modelName_textbox').value
+  const tagString = document.getElementById('tagString_textbox').value
 
   chrome.storage.sync.set({
     deckName: deckName,
     modelName: modelName,
+    tagString: tagString
   }, function () {
-    console.log(`updated values: deckName: ${deckName}, modelName: ${modelName}` );
+    console.log(`updated values: deckName: ${deckName}, modelName: ${modelName}, tagString: ${tagString}` );
   });
 }
 
@@ -48,5 +56,6 @@ function refreshPopup(holder) {
   console.log('refreshPopup', holder)
   document.getElementById('deckName_textbox').value = holder.deckName
   document.getElementById('modelName_textbox').value = holder.modelName
+  document.getElementById('tagString_textbox').value = holder.tagString
 }
 
