@@ -15,15 +15,17 @@ chrome.runtime.onMessage.addListener(
           fields: {
             Word: item.learnLanguageText,
             Picture: item.image && item.image.id
-            ? `<img src='https://images.babbel.com/v1.0.0/images/${item.image.id}/variations/square/resolutions/500x500.png'/>`
-            : '',
+              ? `<img src='https://images.babbel.com/v1.0.0/images/${item.image.id}/variations/square/resolutions/500x500.png'/>`
+              : '',
             "Extra Info": item.displayLanguageText
           },
           options: {
             "allowDuplicate": true,
             "duplicateScope": "deck"
           },
-          tags: tagString.split(',').map(s => s.trim()),
+          tags: tagString
+            ? tagString.split(',').map(s => s.trim())
+            : [],
           audio: [{
             url: `https://sounds.babbel.com/v1.0.0/sounds/${item.sound.id}/normal.mp3`,
             filename: item.sound.id,
