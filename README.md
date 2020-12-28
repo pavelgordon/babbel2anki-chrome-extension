@@ -15,7 +15,7 @@ Chrome Extension which imports and syncs Babbel vocabulary to Anki. Supports aut
 [`AnkiConnect`](https://foosoft.net/projects/anki-connect/) - addon for Anki Desktop.  
 ## How to use
 ### TL;DR:
-1. Install this extension([latest release](https://github.com/pavelgordon/babbel2anki-chrome-extension/releases/tag/v0.0.1))
+1. Install this extension([latest release](https://github.com/pavelgordon/babbel2anki-chrome-extension/releases/). At some point it will be published to chrome...
 1. Open `Anki Desktop` with [`AnkiConnect`](https://foosoft.net/projects/anki-connect/) addon.
 1. Update AnkiConnect CORS policy(reasoning explained below):  Anki Desktop -> Tools -> Addons -> AnkiConnect -> Config->
 ```"webCorsOriginList": ["*"]```
