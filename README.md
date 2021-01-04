@@ -58,7 +58,7 @@ Or go to: `chrome://extensions`, enable Developer mode and load `app` as an unpa
 - Rethink AutoSync mechanism
 - Merging vocabularies(right now extension takes  vocabulary from Babbel and sends it to Anki, even it was added before)
 - Better workflow for multiple decks
-- Extend to other learning web-sites(like Duolingo)
+- ~~Extend to other learning web-sites(like Duolingo)~~ Done in a <a href="https://github.com/pavelgordon/duolingo2anki-chrome-extension">separate extenstion</a>
 - Custom Sync server
 - Error handling if AnkiConnect is not installed
   
