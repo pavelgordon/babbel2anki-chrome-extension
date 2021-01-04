@@ -5,7 +5,7 @@
 Babbel2Anki
 </h1>
 <p align="center">
-Chrome Extension which imports and syncs Babbel vocabulary to Anki. Supports auto-syncing, customising deck and card template for syncing.
+<a href="https://chrome.google.com/webstore/detail/babbel2anki/dnnognkhllcinkeimdhdchjggploankm?hl=en">Chrome Extension</a> which imports and syncs Babbel vocabulary to Anki. Supports auto-syncing(WIP), customising deck and card template for syncing.
 </p>
 
 ## What is it  
