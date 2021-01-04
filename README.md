@@ -15,7 +15,7 @@ Babbel2Anki
 [`AnkiConnect`](https://foosoft.net/projects/anki-connect/) - addon for Anki Desktop.  
 ## How to use
 ### TL;DR:
-1. Install this extension([latest release](https://github.com/pavelgordon/babbel2anki-chrome-extension/releases/)). At some point it will be published to chrome...
+1. Install this extension from <a href="https://chrome.google.com/webstore/detail/babbel2anki/dnnognkhllcinkeimdhdchjggploankm?hl=en">Chrome Web Store</a> or from [latest release](https://github.com/pavelgordon/babbel2anki-chrome-extension/releases/). Here is a <a href="https://superuser.com/questions/247651/how-does-one-install-an-extension-for-chrome-browser-from-the-local-file-system#:~:text=Navigate%20to%20chrome%3A%2F%2Fextensions,should%20load%20into%20your%20browser">tutorial</a> on how to load local version of the extension.
 1. Open `Anki Desktop` with [`AnkiConnect`](https://foosoft.net/projects/anki-connect/) addon.
 1. Update AnkiConnect CORS policy(reasoning explained below):  Anki Desktop -> Tools -> Addons -> AnkiConnect -> Config->
 ```"webCorsOriginList": ["*"]```
@@ -29,8 +29,9 @@ Install [`AnkiConnect`](https://foosoft.net/projects/anki-connect/). Now you hav
 ![image](https://user-images.githubusercontent.com/2462444/80809999-2b538980-8bc3-11ea-9dcc-3bb347e75fbb.png)  
 
 Now with `Anki Desktop` with `AnkiConnect` addon being set up: 
-1. Go to: `chrome://extensions`, enable Developer mode and load `app` as an unpacked extension.
-1. Optional: Set custom deck name, there is a popup with settings if you click on extention icon. Auto-sync mode WIP.
+1. <a href="https://chrome.google.com/webstore/detail/babbel2anki/dnnognkhllcinkeimdhdchjggploankm?hl=en">Install extension</a> from Chrome Web Store.
+Or go to: `chrome://extensions`, enable Developer mode and load `app` as an unpacked extension.
+1. Optional: Set custom deck name, there is a popup with settings if you click on extention icon. 
 
 ![image](https://user-images.githubusercontent.com/2462444/80767209-ae36fe80-8b47-11ea-8798-53a8541cfbb0.png)
 1. Login to Babbel and open [`Review section of Babbel`](https://my.babbel.com/review-manager?ref=navbar ). It opens a review section of a selected language. 
