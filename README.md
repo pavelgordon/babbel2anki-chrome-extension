@@ -31,19 +31,18 @@ Install [`AnkiConnect`](https://foosoft.net/projects/anki-connect/). Now you hav
 Now with `Anki Desktop` with `AnkiConnect` addon being set up: 
 1. <a href="https://chrome.google.com/webstore/detail/babbel2anki/dnnognkhllcinkeimdhdchjggploankm?hl=en">Install extension</a> from Chrome Web Store.
 Or go to: `chrome://extensions`, enable Developer mode and load `app` as an unpacked extension.
-1. Optional: Set custom deck name, there is a popup with settings if you click on extention icon. 
+1. Optional: Set custom deck name, there is a popup with settings if you click on extension icon. 
 
 ![image](https://user-images.githubusercontent.com/2462444/80767209-ae36fe80-8b47-11ea-8798-53a8541cfbb0.png)
-1. Login to Babbel and open [`Review section of Babbel`](https://my.babbel.com/review-manager?ref=navbar ). It opens a review section of a selected language. 
-- `Sync with Anki` is a new button coming from `Babbel2Anki` which allows to manually sync to configured deck.
-- ~~`auto-sync` enabled option performs sync to configured deck every 30 seconds.~~ WIP
-![image](https://user-images.githubusercontent.com/2462444/80767502-564cc780-8b48-11ea-954a-98a3fff83e0d.png)
+1. Login to Babbel and open [`Review section of Babbel`](https://my.babbel.com/review-manager?ref=navbar ). It opens a review section of a selected language.  
+  `Sync with Anki` is a new button coming from `Babbel2Anki` which allows to manually sync to configured deck. Click on it to initiate the sync process. If the button is not active, it means that Anki is not running or AnkiConnect is not set up. 
+  ![image](https://user-images.githubusercontent.com/2462444/80767502-564cc780-8b48-11ea-954a-98a3fff83e0d.png)
 1. `Babbel2Anki` will: 
     -  Create a deck with name `BabbelDeck`(if such deck already exists, nothing happens)
     -  Create a card template (model) with name `BabbelModel` and all necessary fields (if such model already exists, nothing happens)
     -  Adds words from current open page in `My vocab` words to deck `BabbelDeck`. Adds only new words (which are not in the deck).  
-    -  Shows notification about an amount of **new** words which were saved in Anki (e.g. if notification says that new words/total words is 10/50 - means that other 40 words are already in Anki deck).
-![image](https://user-images.githubusercontent.com/2462444/80767663-b5124100-8b48-11ea-9d6b-c8beb3f6aa51.png)
+    -  Shows notification about an amount of **new** words which were saved in Anki (e.g. if notification says that new words/total words is 10/50 - means that other 40 words are already in Anki deck).  
+  ![image](https://user-images.githubusercontent.com/2462444/80767663-b5124100-8b48-11ea-9d6b-c8beb3f6aa51.png)
 1. Check Anki Desktop for `BabbelDeck`: 
 ![image](https://user-images.githubusercontent.com/2462444/80614070-4e086580-8a3e-11ea-8b5c-cf847e1e29eb.png)
 1. Check Dev Tools Console for any errors/debug messages. To Open Dev Tools Console - open the Chrome Menu in the upper-right-hand corner of the browser window and select More Tools > Developer Tools. You can also use the shortcut Option + ⌘ + J (on macOS), or Shift + CTRL + J (on Windows/Linux).
@@ -60,7 +59,7 @@ Or go to: `chrome://extensions`, enable Developer mode and load `app` as an unpa
 - Better workflow for multiple decks
 - ~~Extend to other learning web-sites(like Duolingo)~~ Done in a <a href="https://github.com/pavelgordon/duolingo2anki-chrome-extension">separate extenstion</a>
 - Custom Sync server
-- Error handling if AnkiConnect is not installed
+- ~~Error handling if AnkiConnect is not installed~~
   
 ## Links
 - [Anki](https://apps.ankiweb.net)
