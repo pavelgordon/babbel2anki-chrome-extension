@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/babbel-chrome-extension.iml" filepath="$PROJECT_DIR$/.idea/babbel-chrome-extension.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../duolingo2anki-chrome-extension/.idea/duolingo2anki-chrome-extension.iml" filepath="$PROJECT_DIR$/../duolingo2anki-chrome-extension/.idea/duolingo2anki-chrome-extension.iml" />
     </modules>
   </component>
 </project>

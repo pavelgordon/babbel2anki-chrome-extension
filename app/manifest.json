@@ -1,6 +1,6 @@
 {
   "name": "__MSG_appName__",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifest_version": 2,
   "description": "__MSG_appDescription__",
   "icons": {
@@ -11,7 +11,8 @@
   "background": {
     "scripts": [
       "libs/polyfill.min.js",
-      "scripts/background.js"
+      "scripts/background.js",
+      "scripts/hot-reload.js"
     ]
   },
   "permissions": [
@@ -20,13 +21,8 @@
     "https://my.babbel.com/*",
     "background",
     "notifications",
-    "storage",
-    "webRequest"
+    "storage"
   ],
-  "options_ui": {
-    "page": "options.html",
-    "chrome_style": true
-  },
   "content_scripts": [
     {
       "matches": [
@@ -35,6 +31,9 @@
       ],
       "js": [
         "scripts/contentscript.js"
+      ],
+      "css": [
+        "styles/main.css"
       ],
       "run_at": "document_end",
       "all_frames": false

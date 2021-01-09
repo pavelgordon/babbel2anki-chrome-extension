@@ -9,3 +9,26 @@ h1 {
   font-size: 15px;
   text-align: center;
 }
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.disabled {
+  cursor: not-allowed !important;
+  filter: alpha(opacity=65);
+  opacity: .65;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.helpLink {
+  text-decoration: underline;
+  display: initial;
+  border: none !important;
+}
+
+
+
+
+
