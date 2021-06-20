@@ -53,7 +53,7 @@ async function ankiConnectionHealthCheck() {
 
   const ankiConnectionStatus = await getOrInitProperty("ankiConnectionStatus", {ok: false})
   if (!ankiConnectionStatus.ok) {
-    console.log("Can't connect to Anki")
+    console.log("Can't connect to Anki. Please check the readme on github - maybe install AnkiConnect?")
     button.classList.add("disabled");
     helpLink.style.display = "inline-flex"
 

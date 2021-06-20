@@ -47,7 +47,7 @@ chrome.runtime.onMessage.addListener(
               "Extra Info": item.displayLanguageText
             },
             options: {
-              "allowDuplicate": true,
+              "allowDuplicate": false,
               "duplicateScope": "deck"
             },
             tags: tagString
@@ -107,42 +107,36 @@ function createModel(modelName) {
     cardTemplates: [
       {
         Name: "Comprehension Card",
-        Front: `{{Word}}
-{{#Pronunciation}}
-<br>
-\t<font color=blue>
-\t{{Pronunciation}}
-\t</font>
-\t{{/Pronunciation}}
-<br>`,
+        Front:
+          `
+{{Word}}<br>
+{{Pronunciation}}
+          `,
         Back:
-          `{{FrontSide}}
-
+          `
+{{Word}}<br>
+{{Pronunciation}}
 <hr id=answer>
-
-{{Picture}}
-
-<br>
-
+{{Picture}} <br>
 <span style="color:grey">{{Extra Info}}</span>
-<br>`
+          `
       },
       {
         Name: "Production Card",
-        Front: `{{FrontSide}}
-
-{{Picture}}`,
+        Front: `
+{{Picture}}
+{{Extra Info}} <br>
+          `,
         Back:
-          `{{Picture}}
+          `
+{{Picture}}
+{{Extra Info}} <br>
 <hr id=answer>
 {{Word}}
-{{#Pronunciation}}
 <br>
-{{Pronunciation}}{{/Pronunciation}}
-<br>
-
-<span style="color:grey">{{Extra Info}}</span>
-<br>`
+{{Pronunciation}}
+          
+          `
       }
     ]
   })

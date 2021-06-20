@@ -22,6 +22,13 @@ Babbel2Anki
 1. Open [`Review section of Babbel`](https://my.babbel.com/review-manager?ref=navbar) with any language of your choice.
 1. Click `Sync current page with Anki` button.
 1. Check your `Anki Desktop` for new deck `BabbelDeck` with all your words from Babbel.
+
+**This extension loads only the words which are currently on page. That means:**  
+**1. Select "100 items per page" in the bottom left corner if you want to load more words in bigger groups, but longer time**    
+**2. If you have more than 100 words, please click manually on next page and then once more on Sync With Anki**  
+**This is because this extension doesn't make any api calls to Babbel, instead it reuses already loaded vocabulary on the page.**
+
+
 ### More detailed guide
 Install [`AnkiConnect`](https://foosoft.net/projects/anki-connect/). Now you have to allow AnkiConnect to receive calls from this extension via setting `webCorsOriginList`(Anki Desktop -> Tools -> Addons -> AnkiConnect -> Config): 
 - `"webCorsOriginList": ["*"]` to allow calls from any resourse
@@ -40,7 +47,7 @@ Or go to: `chrome://extensions`, enable Developer mode and load `app` as an unpa
 1. `Babbel2Anki` will: 
     -  Create a deck with name `BabbelDeck`(if such deck already exists, nothing happens)
     -  Create a card template (model) with name `BabbelModel` and all necessary fields (if such model already exists, nothing happens)
-    -  Adds words from current open page in `My vocab` words to deck `BabbelDeck`. Adds only new words (which are not in the deck).  
+    -  Load words from **current open page** in `My vocab` words to deck `BabbelDeck`. Adds only new words (which are not in the deck).  
     -  Shows notification about an amount of **new** words which were saved in Anki (e.g. if notification says that new words/total words is 10/50 - means that other 40 words are already in Anki deck).  
   ![image](https://user-images.githubusercontent.com/2462444/80767663-b5124100-8b48-11ea-9d6b-c8beb3f6aa51.png)
 1. Check Anki Desktop for `BabbelDeck`: 
