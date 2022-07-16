@@ -7,7 +7,7 @@ let button, helpLink;
 function injectSyncButton() {
   if (document.body && document.head
     && document.getElementsByClassName('learned-items__toolbar')[0]
-	&& document.getElementsByClassName('learned-items__toolbar')[0].children.length > 1
+	  && document.getElementsByClassName('learned-items__toolbar')[0].children.length > 1
   ) {
     const parent = document.getElementsByClassName('learned-items__toolbar')[0];
 
