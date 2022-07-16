@@ -6,13 +6,10 @@ let button, helpLink;
 //waits for DOM to load and then injects `Sync with Anki` button into web page.
 function injectSyncButton() {
   if (document.body && document.head
-    && document.getElementsByClassName('learned-items__toolbar-item')[1]
-    && document.getElementsByClassName('learned-items__toolbar-item')[1].children.length >= 1
+    && document.getElementsByClassName('learned-items__toolbar')[0]
+	&& document.getElementsByClassName('learned-items__toolbar')[0].children.length > 1
   ) {
-    const sibling = document.getElementsByClassName('learned-items__toolbar-item')[1];
-    sibling.style.display = "flex"
-    document.getElementsByClassName("learned-items__toolbar")[0].style.display = "flex"
-    document.getElementsByClassName("learned-items__toolbar")[0].style.alignItems = "end"
+    const parent = document.getElementsByClassName('learned-items__toolbar')[0];
 
     const div = document.createElement("div");
     div.id = "wrapperDiv"
@@ -35,7 +32,7 @@ function injectSyncButton() {
 
     div.append(button)
     div.append(helpLink)
-    sibling.appendChild(div)
+    parent.appendChild(div)
 
   } else {
     requestIdleCallback(injectSyncButton);
