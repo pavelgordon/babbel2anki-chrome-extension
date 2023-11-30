@@ -1,46 +1,31 @@
 'use strict';
 
-
 let button, helpLink;
 
-//waits for DOM to load and then injects `Sync with Anki` button into web page.
+//waits for DOM to load the review button and then injects `Sync with Anki` button into web page.
 function injectSyncButton() {
-  if (document.body && document.head
-    && document.getElementsByClassName('learned-items__toolbar')[0]
-	  && document.getElementsByClassName('learned-items__toolbar')[0].children.length > 1
-  ) {
-    const parent = document.getElementsByClassName('learned-items__toolbar')[0];
+  const reviewButtonNodeList = document.querySelectorAll("a[href*='review?'][color='secondary']")
+  if (reviewButtonNodeList && reviewButtonNodeList.length === 1) {
+    const parent = reviewButtonNodeList[0].parentElement;
+    const sibling = reviewButtonNodeList[0];
+    
+    const syncButtonDiv = createSyncButtonDiv();
 
-    const div = document.createElement("div");
-    div.id = "wrapperDiv"
-    div.style.display = "flex"
-    div.style.flexDirection = "column"
+    const wrapperDiv = document.createElement("div");
+    wrapperDiv.id = "wrapperDiv"
+    wrapperDiv.style.display = "flex"
+    wrapperDiv.style.flexDirection = "row"
 
-    button = document.createElement("a");
-    button.className = 'btn btn--primary'
-    button.style.marginRight = ".938rem"
+    wrapperDiv.append(sibling)
+    wrapperDiv.append(syncButtonDiv)
 
-    button.innerHTML =
-      '<img id="sync_spinner" src="https://icongr.am/clarity/sync.svg?size=20&color=FFFFFF" style="margin-right: 8px" alt="spin me baby"/>' +
-      '<span id="sync_btn_label">Sync to Anki</span>'
-    button.addEventListener('click', syncHandler);
-
-    helpLink = document.createElement("a");
-    helpLink.className = 'helpLink'
-    helpLink.href = "https://github.com/pavelgordon/babbel2anki-chrome-extension#more-detailed-guide"
-    helpLink.innerText = "Troubleshoot"
-
-    div.append(button)
-    div.append(helpLink)
-    parent.appendChild(div)
-
+    parent.append(wrapperDiv)
   } else {
     requestIdleCallback(injectSyncButton);
   }
 }
 
 requestIdleCallback(injectSyncButton);
-
 
 async function ankiConnectionHealthCheck() {
   if (!button) {
@@ -125,3 +110,28 @@ function stopSpinningAnimation() {
   document.getElementById("sync_spinner").style.animation = ""
 }
 
+function createSyncButtonDiv() {
+  const div = document.createElement("div");
+  div.id = "syncButtonDiv"
+  div.style.display = "flex"
+  div.style.flexDirection = "column"
+  div.style.marginLeft = ".938rem"
+
+  button = document.createElement("a");
+  button.className = 'btn btn--primary'
+
+  button.innerHTML =
+    '<img id="sync_spinner" src="https://icongr.am/clarity/sync.svg?size=20&color=FFFFFF" style="margin-right: 8px" alt="spin me baby"/>' +
+    '<span id="sync_btn_label">Sync to Anki</span>'
+  button.addEventListener('click', syncHandler);
+
+  helpLink = document.createElement("a");
+  helpLink.className = 'helpLink'
+  helpLink.href = "https://github.com/pavelgordon/babbel2anki-chrome-extension#more-detailed-guide"
+  helpLink.innerText = "Troubleshoot"
+
+  div.append(button)
+  div.append(helpLink)
+
+  return div;
+}
