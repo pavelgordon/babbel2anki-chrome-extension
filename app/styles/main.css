@@ -24,11 +24,38 @@ h1 {
 }
 .helpLink {
   text-decoration: underline;
-  display: initial;
+  display: inline-flex;
+  justify-content: center;
   border: none !important;
+  margin-top: 8px;
 }
 
+.babbel-button {
+  height: 44px;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 4000px;
+  cursor: pointer;
+  display: inline-flex;
+  padding: 12px 24px;
+  width: auto;
+  flex-shrink: 0;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  outline: none;
+  text-decoration: none;
+  margin: 0px;
+  transition: all 100ms ease-out 0s;
+  background-color: rgb(254, 77, 1);
+  color: white;
+  border: 1px solid rgb(21, 21, 21);
+}
 
-
-
-
+.babbel-font {
+  font-family: "Graphik LC", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
