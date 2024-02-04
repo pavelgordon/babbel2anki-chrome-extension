@@ -4,7 +4,7 @@ let button, helpLink;
 
 //waits for DOM to load the review button and then injects `Sync with Anki` button into web page.
 function injectSyncButton() {
-  const reviewButtonNodeList = document.querySelectorAll("a[href*='review?'][color='secondary']")
+  const reviewButtonNodeList = document.querySelectorAll("a[href*='review?'][color='secondary-default']")
   if (reviewButtonNodeList && reviewButtonNodeList.length === 1) {
     const parent = reviewButtonNodeList[0].parentElement;
     const sibling = reviewButtonNodeList[0];
@@ -118,7 +118,7 @@ function createSyncButtonDiv() {
   div.style.marginLeft = ".938rem"
 
   button = document.createElement("a");
-  button.className = 'btn btn--primary'
+  button.className = 'babbel-button babbel-font'
 
   button.innerHTML =
     '<img id="sync_spinner" src="https://icongr.am/clarity/sync.svg?size=20&color=FFFFFF" style="margin-right: 8px" alt="spin me baby"/>' +
@@ -126,9 +126,9 @@ function createSyncButtonDiv() {
   button.addEventListener('click', syncHandler);
 
   helpLink = document.createElement("a");
-  helpLink.className = 'helpLink'
+  helpLink.className = 'helpLink babbel-font'
   helpLink.href = "https://github.com/pavelgordon/babbel2anki-chrome-extension#more-detailed-guide"
-  helpLink.innerText = "Troubleshoot"
+  helpLink.innerText = "Troubleshoot Babbel2Anki"
 
   div.append(button)
   div.append(helpLink)
