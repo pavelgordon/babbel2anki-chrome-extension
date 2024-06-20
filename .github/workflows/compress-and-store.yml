@@ -3,7 +3,7 @@ name: Compress and Store App Folder
 on:
   push:
     branches:
-      - main
+      - master
     paths:
       - 'app/**'
 
