@@ -1,0 +1,42 @@
+name: Compress and Store App Folder
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'app/**'
+
+jobs:
+  compress_and_store:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository content
+      uses: actions/checkout@v3
+
+    - name: Set up Python environment
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.x'
+
+    - name: Install zip
+      run: sudo apt-get install zip
+
+    - name: Remove existing app.zip if it exists
+      run: |
+        if [ -f app/app.zip ]; then
+          git rm app/app.zip
+        fi
+
+    - name: Compress /app folder
+      run: zip -r app.zip app
+
+    - name: Commit and push the zip file
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        mv app.zip app/
+        git add app/app.zip
+        git commit -m "Add compressed app folder"
+        git push
