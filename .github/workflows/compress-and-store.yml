@@ -29,6 +29,9 @@ jobs:
           git rm app/app.zip
         fi
 
+    - name: Debug - List files in repository
+      run: ls -R
+
     - name: Compress /app folder
       run: zip -r app.zip app
 
