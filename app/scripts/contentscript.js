@@ -59,8 +59,8 @@ async function syncHandler() {
   }
 
   const state = JSON.parse(sessionStorage.getItem('review_manager_state'))
-  const learnedItems = state.learnedItems.allItems
-  console.log('Sending ', Object.keys(learnedItems).length, ' words to Anki. Might take a minute or two to load images and sounds for every word')
+  const learnedItems = Object.values(state.learnedItems.allItems)
+  console.log('Sending ', learnedItems.length, ' words to Anki. Might take a minute or two to load images and sounds for every word')
   sendVocabularyToAnki(learnedItems)
 }
 

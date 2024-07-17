@@ -35,7 +35,7 @@ chrome.runtime.onMessage.addListener(
         const deckName = request.deckName
         const modelName = request.modelName
         const tagString = request.tagString
-        const notes = Object.values(request.learnedItems).map(
+        const notes = request.learnedItems.map(
           item => ({
             deckName: deckName,
             modelName: modelName,
