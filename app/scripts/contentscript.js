@@ -4,7 +4,7 @@ let button, helpLink;
 
 //waits for DOM to load the review button and then injects `Sync with Anki` button into web page.
 function injectSyncButton() {
-  const reviewButtonNodeList = document.querySelectorAll("button[href*='review?'][color='secondary-default']")
+  const reviewButtonNodeList = document.querySelectorAll("button[href*='review?'][color='primary-emphasis']")
   if (reviewButtonNodeList && reviewButtonNodeList.length === 1) {
     const parent = reviewButtonNodeList[0].parentElement;
     const sibling = reviewButtonNodeList[0];
