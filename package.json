@@ -11,7 +11,7 @@
     "@babel/register": "^7.0.0",
     "babel-eslint": "^10.0.1",
     "del": "^2.2.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-cache": "^0.4.3",
     "gulp-chrome-manifest": "0.0.13",
